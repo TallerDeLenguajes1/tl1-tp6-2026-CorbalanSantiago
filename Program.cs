@@ -1,34 +1,42 @@
-﻿Console.WriteLine("Hello, World!");
-int a;
-int b;
-a=10;
-b=a;
-Console.WriteLine("valor de a:"+a);
-Console.WriteLine("valor de b:"+b);
+﻿//calculadora v1
 
-//ejercicio 1
-Console.WriteLine("ingrese un numero: ");
-string n=Console.ReadLine();
-if(int.TryParse(n,out a))
+int x,y,z,d;
+do
 {
-    if(a>0)
+    Console.WriteLine("ingrese n1: ");
+    string n1=Console.ReadLine();
+    int.TryParse(n1, out x);
+    Console.WriteLine("ingrese n2: ");
+    string n2=Console.ReadLine();
+    int.TryParse(n2, out y);
+
+    Console.WriteLine("que operacion quiere hacer: ");
+    Console.WriteLine("1. suma");
+    Console.WriteLine("2. resta");
+    Console.WriteLine("3. multiplicacion");
+    Console.WriteLine("4. division");
+    string n3=Console.ReadLine();
+    int.TryParse(n3, out z);
+
+    switch(z)
     {
-        int invertido=0;
-        while(a!=0)
-        {
-            int resto=a%10;
-            invertido=invertido*10+resto;
-            a=a/10;
-        }
-        Console.WriteLine("numero: " +n);
-        Console.WriteLine("numero invertido " +invertido);
+        case 1: 
+            Console.WriteLine($"suma: {x+y}"); 
+        break;
+        case 2: 
+            Console.WriteLine($"resta: {x-y}"); 
+        break;
+        case 3: 
+            Console.WriteLine($"multiplicacion: {x*y}"); 
+        break;
+        case 4: 
+            Console.WriteLine($"division: {x/y}"); 
+        break;
+        default:
+            Console.WriteLine("ingrese un numero valido");
+        break;
     }
-    else
-    {
-        Console.WriteLine("debe ser mayor a 0");
-    }
-}
-else
-{
-    Console.WriteLine("no es un numero");
-}
+    Console.WriteLine("desea hacer otra operacion? (1. si | 0. no)");
+    string n4=Console.ReadLine();
+    int.TryParse(n4, out d);
+}while(d!=0);
