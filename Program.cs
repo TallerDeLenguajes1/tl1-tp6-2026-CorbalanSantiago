@@ -1,4 +1,4 @@
-﻿//ejercicio 2
+﻿//calculadora v2
 
 int a,b,z,d;
 float x;
